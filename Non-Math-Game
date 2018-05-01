@@ -1,5 +1,7 @@
-//Tires on the loose!
+//Game title: Tires on the loose!
 
+
+//Declaring counter and defining token 
 Ball b1;
 Ball b2;
 Ball b2;
@@ -9,6 +11,7 @@ int counter;
 void setup() {
   size(600, 600);
 
+//Declaring our variables 
   b1 = new Ball();
   b2 = new Ball();
 	b3 = new Ball();
@@ -18,19 +21,21 @@ void setup() {
   s = new Shooter();
 }
 
+//Creating blank canvas for the game (background)
 void draw() {
   background(255);
 	
-	//writing out title & name 
+	
+	//writing out instructions for the game on top center of the game screen 
   fill(298, 200, 100);
   textSize(28);
   text("Zap the tires to get them back!", 100, 20);
 
-	//Score
-					fill(0);
+	//Creating score counter and text 
+		fill(0);
 		text("Score: " + counter, 400, 520);
 	
-//Setting class of the balls  
+//Setting class of the balls. Includes motion (movement, bounce, draw) 
   b1.moveBall();
   b1.bounceBall();
   b1.drawBall();
@@ -39,7 +44,7 @@ void draw() {
   b2.bounceBall();
   b2.drawBall();
 	
-	b3.moveBall();
+  b3.moveBall();
   b3.bounceBall();
   b3.drawBall();
 	
@@ -53,15 +58,17 @@ void draw() {
 	
 	s.drawShooter();
 
+//Once game is over and task is completed. Creating value for counter (highest possible score is 500). The 'task completed'
+sentence will appear in the center of the game screen once all the tires (ellipses) have been zapped. 
   if (counter == 500) {
-		fill(0);
-		textSize(25);
-		text("Task Completed!", 200, 200);
-    gameOver();
+	fill(0);
+	textSize(25);
+text("Task Completed!", 200, 200);
   }
 }
 
-//Controlling the popping of the balls 
+//Controlling the popping of the balls with mousePressed function. When you click the screen using your mouse, the 'laser beam' 
+will fire and you can move the rectangle to targer the tires (ellipses) and press on your mouse to shoot. 
 void mousePressed() {
   //b1.pop();
   //b2.pop();
@@ -69,15 +76,11 @@ void mousePressed() {
 	//b4.pop();
 	//b5.pop();
   s.shoot();
-  println(counter);
 }
 
-//When all balls have been popped 
-void gameOver() {
-  println("game over!");
-}
 
-//Function of the 'class' (What the balls will do)  
+//Function of the 'class' (What the balls will do). After defining these tokens, I can control what my tire's (ellipse) velocity 
+(speed), size, radius, color and determine flow of the program with boolean (true or false) 
 class Ball {
   float x;
   float y;
@@ -87,7 +90,7 @@ class Ball {
   int myColor;
   boolean popped;
 
-	//Charactersitics of the balls (tires- speed, color, size)
+	//Charactersitics of the tires (speed, color, x and y coordinates of tire, tire sizes, radius and flow- false)
   Ball() {
     x = random(width);
     y = random(30, 200);
@@ -98,12 +101,13 @@ class Ball {
     popped = false;
   }
 
-	//Movement of balls (tires)
+	//Movement of balls (tires) to the right 
   void moveBall() {  
     x = x + speed; // change x location
   }
 
-	//Repetition 
+	//Repetition. Movement of tires to the left. Tires will be moving at a constant velocity back and forth even after 
+	being popped. 
   void bounceBall() {
     if (x > width || x < 0) { 
       speed = speed *-1; //reversing the direction of 'x' 
@@ -131,6 +135,7 @@ class Ball {
   }
 }
 
+//Thread for shooting 
 class Shooter {
 
   float x;
