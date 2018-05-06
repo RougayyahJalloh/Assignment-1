@@ -1,0 +1,80 @@
+function setup() {
+	//Setting up screen size of game 
+  createCanvas(600, 600);
+		
+	//Creating text for math game and where the text will be shown on the screen 
+  textAlign(CENTER, CENTER);
+  textSize(80);
+  fill(0);
+noStroke();
+  background(255);
+	fill(0);
+	textSize(53);
+	text("Click to play", 250, 300);
+	
+}
+
+
+function mouseClicked() {
+  background(255);
+	fill(22, 38, 84);
+  var num1 = int(random(1, 100));
+  var num2 = int(random(1, 100));
+  var output = num1 + " + " + num2 + " = ";
+	var input =  + (num1 + num2)
+
+	
+	//Numbers in the rectangles 
+	//Rectangle #1 
+  text(output, width / 2, height / 2);
+	stroke(0);
+	fill(255);
+	rect(0, 352, 140, 80);
+	fill(22);
+	text(10);
+	text (input, 90, 390);
+	
+	//Rectangle #2 
+	fill(255);
+		rect(150, 352, 140, 80);
+	
+	textSize(50);
+	fill(0);
+	text(int(random(1,100)),235, 390);
+	
+	//Rectangle #3 
+		fill(255);
+		rect(300, 352, 140, 80);
+	
+		textSize(50);
+	fill(0);
+	text(int(random(1,100)),380, 390);
+	
+	//Rectange #4 
+
+		fill(255);
+		rect(450, 352, 140, 80);
+	
+	textSize(50);
+	fill(0);
+	text(int(random(1,100)),500, 390);
+	
+	
+	/*Clicking the buttons. Continue to look over answer buttons and else & if functions to create right and wrong answers 
+if (mousePressed) {  
+      if (mouseY > 352 && mouseY <380 && mouseX > 150 && 250> mouseX) {
+        fill(245);
+        stroke(0);
+        rect(670, 352, 150, 80);
+        fill(0);
+       textSize(50);
+	fill(0);
+	text(int(random(1,100)),440, 390);
+	
+				int(random(1, 100)) = true 
+  fill(255);
+        noStroke();
+        rect(0, 0, 600, 920);
+	 }
+    }
+  }
