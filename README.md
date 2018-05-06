@@ -1,5 +1,5 @@
 # Assignment-1
-By: Rougayyah Jalloh 
+<em>By: Rougayyah Jalloh</em> 
 
 # Home Screen 
 This homescreen design is a layout of what the homescreen of both the math and non-math game should look like before the games are actually played. Although this homescreen is unable to actually conncet to the games created, the original concept was to have the homescreen with 2 buttons (one for math game and one for non-math game) and when one button is clicked by a mouse, would lead to the game created using a 'thread'. 
