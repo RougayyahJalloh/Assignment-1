@@ -10,10 +10,20 @@ noStroke();
   background(255);
 	fill(0);
 	textSize(53);
-	text("Click to play", 250, 300);
+	text("Click to play!", 280, 150);
+	fill(255,200,200);
+	stroke(0);
+	rect (140, 204, 277, 70); 
+	fill(0);
+	noStroke();
+	textSize(26);
+	text("Start", 280, 240);
+	fill(44, 37, 88);
+	textSize(18);
+	text("An addition question will appear on the screen.", 194, 450); 
+	text("Select the answer that corresponds with the math question", 238, 472);
 	
 }
-
 
 function mouseClicked() {
   background(255);
@@ -26,12 +36,14 @@ function mouseClicked() {
 	
 	//Numbers in the rectangles 
 	//Rectangle #1 
+		textSize(50);
   text(output, width / 2, height / 2);
 	stroke(0);
 	fill(255);
 	rect(0, 352, 140, 80);
 	fill(22);
 	text(10);
+	textSize(50);
 	text (input, 90, 390);
 	
 	//Rectangle #2 
@@ -40,41 +52,26 @@ function mouseClicked() {
 	
 	textSize(50);
 	fill(0);
+	noStroke();
 	text(int(random(1,100)),235, 390);
 	
 	//Rectangle #3 
+	stroke(0);
 		fill(255);
 		rect(300, 352, 140, 80);
 	
+		noStroke();
 		textSize(50);
 	fill(0);
 	text(int(random(1,100)),380, 390);
 	
 	//Rectange #4 
-
+	stroke(0);
 		fill(255);
 		rect(450, 352, 140, 80);
-	
+		noStroke();
 	textSize(50);
 	fill(0);
 	text(int(random(1,100)),500, 390);
 	
-	
-	/*Clicking the buttons. Continue to look over answer buttons and else & if functions to create right and wrong answers 
-if (mousePressed) {  
-      if (mouseY > 352 && mouseY <380 && mouseX > 150 && 250> mouseX) {
-        fill(245);
-        stroke(0);
-        rect(670, 352, 150, 80);
-        fill(0);
-       textSize(50);
-	fill(0);
-	text(int(random(1,100)),440, 390);
-	
-				int(random(1, 100)) = true 
-  fill(255);
-        noStroke();
-        rect(0, 0, 600, 920);
-	 }
-    }
   }
